@@ -19,7 +19,7 @@
 - CSS 3
 - JQuery
 - Google Firebase
-- Zillow Property Details API
+- Zillow Property Details API - GetUpdatedPropertyDetails
 
 ## Licensing Information
 
