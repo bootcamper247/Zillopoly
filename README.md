@@ -1,7 +1,9 @@
 <img src="assets/images/zillopoly_logo.png" align="right" />
 
 # Zillopoly
-> A real estate price guessing game built by Anjali Aujla, Taylor Reese, Tuere Thomas & Will Woods.
+>A real estate price guessing game built by Anjali Aujla, Taylor Reese, Tuere Thomas & Will Woods.
+
+## https://bootcamper247.github.io/Zillopoly/
 
 ## How to Play
 
