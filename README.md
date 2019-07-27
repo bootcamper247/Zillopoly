@@ -1,4 +1,4 @@
-<img src="assets/images/zillopoly_logo.png" align="right" />
+<img src="https://user-images.githubusercontent.com/44557111/61999987-1299ce80-b09b-11e9-9837-eac58d74e5ea.PNG" align="centre" />
 
 # Zillopoly
 >A real estate price guessing game built by Anjali Aujla, Taylor Reese, Tuere Thomas & Will Woods.
