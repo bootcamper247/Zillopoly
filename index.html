@@ -1,0 +1,222 @@
+<head>
+    <title>Zillopoly!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900|Montserrat|Rock+Salt" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title"><span id="letterZ">Z</span>ILLOPOLY</h1>
+        <p id="subtext">A Real Estate Price Guessing Game</p>
+
+    </header>
+
+    <main>
+
+        <!-- How to and Login/Logout Section -->
+        <section id="relButtons">
+            <h2 class="howtobanner">WELCOME</h2>
+            <hr>
+            <content>
+                <div class="hideme">
+                    <br>
+                    <div id="login"></div>
+                    <form id="rendered-form">
+                        <div class="rendered-form">
+
+                            <label id="userInitials">Enter your initials</label>
+                            <input class="example-leaderboard-name" type="text" autocomplete="off" id="nameInput"
+                                maxlength="3" style="text-transform: uppercase;">
+                            <br>
+                            <label id="userPw">4-digit PIN</label>
+                            <input id="userPw-input" type="password" maxlength="4" size="4">
+                            <br>
+                            <button class="leftbuttons" id="btnLogin">Log In</button>
+                            <button class="leftbuttons hide" id="btnLogout">Logout</button>
+                            <button class="leftbuttons" id="btnSignUp">Sign Up</button>
+
+                        </div>
+                    </form>
+                </div>
+                <br>
+
+                <ul class="share-buttons">
+                    <li>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwwoods1016.github.io%2FZillopoly&quote="
+                            title="Share on Facebook" target="_blank">
+                            <img alt="Share on Facebook"
+                                src="assets/images/social_flat_rounded_rects_svg/Facebook.svg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwwoods1016.github.io%2FZillopoly&text=:%20http%3A%2F%2Fwwoods1016.github.io%2FZillopoly"
+                            target="_blank" title="Tweet">
+                            <img alt="Tweet" src="assets/images/social_flat_rounded_rects_svg/Twitter.svg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwwoods1016.github.io%2FZillopoly&title="
+                            target="_blank" title="Submit to Reddit">
+                            <img alt="Submit to Reddit" src="assets/images/social_flat_rounded_rects_svg/Reddit.svg" />
+                        </a>
+                    </li>
+                    <li id="sms">
+                        <a href="sms:" target="_blank" title="Send SMS">
+                            <img id="exception" alt="Send as SMS"
+                                src="assets/images/social_flat_rounded_rects_svg/sms.svg" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:?subject=&body=:%20http%3A%2F%2Fwwoods1016.github.io%2FZillopoly"
+                            target="_blank" title="Send email"
+                            onclick="window.open('mailto:?subject=Thanks%20for%20checking%20out%20' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent('wwoods.github.io/Zillopoly')); return false;">
+                            <img alt="Send email" src="assets/images/social_flat_rounded_rects_svg/Email.svg" />
+                        </a>
+                    </li>
+                </ul>
+
+
+            </content>
+        </section>
+
+        <!-- Images and Home Data Section -->
+        <section id="bulk">
+            <h2 class="imagesbanner">HOME <span id="progress">1</span>/5</h2>
+            <hr>
+            <div id="hideAfter">
+                <div id="images"></div>
+
+
+                <div id="bbcontainer">
+                    <div id="bedandbath"></div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Price Guess Form Section -->
+        <section id="relative">
+            <h2 class="guessbanner">GUESS THE PRICE</h2>
+            <hr>
+
+
+            <p id="score">Put on your monocle and see if you've got a knack for judging a book by its cover in the
+                current US Real Estate Market.</p>
+            <form id="price-form" autocomplete="off">
+                <div class="price-form">
+                    <div class="form-entry">
+                        <span class="currency">$</span>
+                        <input class="form-control" id="guess-price" name="step2-number_2" type="text"
+                            data-type="number" placeholder="1,000,000" autocomplete="off">
+                    </div>
+
+                    <div class="submit-button">
+                        <button type="button" class="submit-answer">Submit</button></div>
+                </div>
+            </form>
+            <div id="guess"></div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section>
+            <h2 class="leaderboardbanner">SCORES</h2>
+            <hr>
+            <content>
+                <div class="message1"></div>
+                
+                    <p id="bids">Bids won: 0 | Bids lost: 0</p>
+                    
+                    <hr>
+                    <div id="leaderboard">
+                    <p>High Scores</p>
+                        <table>
+                            <tr>
+                                <td>WFW</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>WFW</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>RJJ</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>JMR</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>TMR</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>BPS</td>
+                                <td>5</td>
+                            </tr>                        
+                        </table>
+                        ...
+                
+
+                </div>
+            </content>
+        </section>
+
+
+
+
+
+        <!-- Current Score Section-->
+        <!-- <section>
+            <h2 class="scorebanner">YOUR SCORE</h2>
+            <hr>
+            <content>
+            <div id="score"></div>
+            <div id="win-number"></div>
+            <div id="loss-number"></div>
+            </content>
+        </section> -->
+
+
+
+
+    </main>
+
+    <footer>
+
+        &copy; Anjali Aujla, Taylor Reese, Tuere Thomas & Will Woods, 2019.
+        <br>
+        &copy; Zillow, Inc., 2006-2019. Use is subject to Terms of Use.
+    </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBsytODh-XF7OD9YSPwAymfQy4r8KdnGA4",
+            authDomain: "zillopoly.firebaseapp.com",
+            databaseURL: "https://zillopoly.firebaseio.com",
+            projectId: "zillopoly",
+            storageBucket: "zillopoly.appspot.com",
+            messagingSenderId: "578380333877"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script type="text/javascript" src="assets/scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="assets/scripts/slick.js"></script> -->
+
+</body>
+
+</html>

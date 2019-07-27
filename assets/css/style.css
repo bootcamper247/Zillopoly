@@ -1,0 +1,520 @@
+/* ---- Basic Layout ---- */
+@media (min-width: 1000px) {
+  main {
+    column-count: 2;
+    column-gap: 10px;
+  } 
+
+  section {
+    break-inside: avoid;
+  }
+
+}
+
+@media (min-width: 1300px) {
+  main {
+     column-count: 4;
+  }
+}
+
+/* ---- Global Styles and Variables ---- */
+
+:root {
+  --blue: #3367A4;
+  --grey: #777;
+  --red: #C52625;
+  --white: #fff;
+  --orange: #EC9321;
+  --lightblue: #ACDCEF;
+  --magenta: #C53883;
+  --green: #50A859;
+  --brown: #864C38;
+  --black: #000;
+}
+
+body {
+  background-image: url("../images/background.jpeg");
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black);
+  line-height: 1.4em;
+}
+
+main {    
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---- Specific Styles ---- */
+
+/* Logo */
+
+header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  text-align: center;
+  
+  z-index: 0;
+  margin-bottom: -12px;
+}
+
+.title {
+  display: absolute;
+  margin: 0 auto 0 auto;
+  font-size: 4em;
+  font-family: 'Lato', sans-serif;
+  font-weight: var(--black);
+  text-shadow: 0 4px 4px var(--black);
+  padding: 18px 20px 20px 20px;
+  text-align: center;
+  color: var(--white);
+  background: #f85032; /* Old browsers */
+  background: -moz-linear-gradient(top, #f85032 0%, #f7f7f7 4%, #f16f5c 19%, #f6290c 36%, #f6290c 36%, #f02f17 71%, #c52625 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f85032 0%,#f7f7f7 4%,#f16f5c 19%,#f6290c 36%,#f6290c 36%,#f02f17 71%,#c52625 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f85032 0%,#f7f7f7 4%,#f16f5c 19%,#f6290c 36%,#f6290c 36%,#f02f17 71%,#c52625 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border: 4px solid var(--black);
+  width: 380px;
+  height: 78px;
+}
+
+#subtext {
+  color: #fff;
+  padding-top: 5px;
+  margin-top: 0;
+  margin-bottom: -10px;
+}
+
+#letterZ {
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.1em;
+  color: #3367A4;
+  margin-left: -30px;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: #34495e;
+}
+a:hover {
+  color: #34495e;
+  text-shadow: 2px 2px 5px var(--black);
+}
+
+p {
+  margin: 1em .5em;
+  padding: 0 10px;
+  font-size: 1.15em;
+  line-height: 1.5em;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 3px solid var(--grey);
+  border-radius: 3px;
+  background-color: var(--white);
+}
+
+.options-link {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: var(--grey);
+}
+
+/* Section Cards */
+
+section {
+  border-style: solid;
+  border-color: var(--black);
+  border-width: 4px;
+  background-color: #CFEADB;
+  margin-bottom: 20px;
+  overflow: hidden;
+  min-height: 450px;
+  text-align: center;
+  z-index: 0;
+}
+
+.large {
+  font-size: 2em;
+  display: flex;
+ justify-content: center;
+}
+
+/* section:hover {
+    transform: scale(1.02)translate3d(0px, 0px, 0px);
+    transition: .2s;
+    z-index: 2;
+} */
+
+hr {
+  border: none;
+  height: 4px;
+  background-color: var(--black);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-top: 15px;
+  height: 50px;
+  text-align: center;
+  color: var(--white);
+  text-shadow: 2px 2px 2px var(--black);
+}
+
+label {
+  display: block;
+  margin-left: 0 auto;
+  font-size: .8em;
+  justify-content: center;
+  text-align: center;
+}
+
+#score {
+  margin-top: 50px;
+}
+
+.rendered-form input, #guess-price {
+  width: 250px;
+}
+
+.howtobanner {
+  background-color: var(--blue);
+}
+
+.leaderboardbanner {
+  background-color: var(--brown);
+}
+
+.imagesbanner {
+  background-color: var(--green);
+}
+
+.guessbanner {
+  background-color: var(--magenta);
+}
+
+.scorebanner {
+  background-color: var(--lightblue);
+}
+
+.sharebanner {
+  background-color: var(--orange);
+}
+
+/* Section sizing */
+
+#leaderboard {
+  display: inherit;
+}
+
+#guess-price {
+  display: block;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* login */
+.leftbuttons {
+  height: 40px;
+  width: 30%;
+  font-size: .9em;
+}
+
+.rendered-form {
+  font-size: .9em;
+}
+
+.fb-number-label {
+  margin-top: 50px;
+  margin-bottom: -70px;
+}
+
+
+
+/* Home Images and Zillow Branding */
+
+#images { 
+  overflow: visible;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#imagefromzillow {
+  display: block;
+  margin: auto;
+  width: 100%;
+  border-bottom: 4px solid black;
+  transition: .2s;
+  z-index: 0;
+  height: auto;
+}
+
+#imagefromzillow:hover {
+  cursor: zoom-in;
+}
+
+#imagefromzillow:active {
+    transform: scale(2);
+    z-index: 1;
+    cursor: zoom-in;
+    
+}
+
+#bbcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bedandbath {
+  margin: auto;
+}
+
+
+
+
+/* .zillow-img {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  height: 20px;
+  z-index: 100;
+} */
+
+/* form Inputs and Buttons */
+
+form {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 10px;
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+input {
+  height: 30px;
+  font-size: 1em;
+  border: 1px solid var(--grey);
+  
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.rendered-form input {
+  text-align: center;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  border-style: none;
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  font-size: .8em;
+  border: 1px solid var(--grey);
+  box-shadow: 0 6px #999;
+  border-radius: 10px;
+  transition: .2s;
+  margin: 20px 0;
+}
+
+button:hover {
+  background-color: lightgray;
+  color: var(--black);
+  transition: .2s;
+
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px #666;
+    transition: .01s;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Social Media Buttons */
+
+ul.share-buttons{
+  position: relative;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+ul.share-buttons li:hover {
+  transform: scale(1.1)translate3d(0px, 0px, 0px);
+  transition: .2s;
+  z-index: 1;
+}
+
+#sms {
+  background-color: yellow;
+  border-radius: 10px;
+  display: none;
+}
+
+#sms:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px #666;
+}
+
+#relButtons {
+position: relative;
+}
+
+ul.share-buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+  right: 10%;
+  margin: 0 auto;
+}
+
+ul.share-buttons li{
+  display: inline;
+  margin-left: 5px;
+  margin-right: 5px;
+  transition: .2s;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+ul.share-buttons img, #exception{
+  width: 40px;
+  box-shadow: 0 6px #999;
+  border-radius: 10px;
+
+  /*  */
+}
+
+ul.share-buttons img:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px #666;
+}
+
+#lastmessage {
+  margin-top: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+/* Footer/Copyright Information */
+
+footer {
+  position: static;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  color: var(--white);
+  text-align: center;
+  font-size: .5em;
+  line-height: 1.25em;
+  margin: 0 auto;
+  margin-top: -20px;
+}
+
+.₩ {
+  transform: rotateX(180deg) translate(0, .15em);
+  margin-left: .5em;
+}
+
+.form-entry {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.currency {
+  height: auto;
+  width: auto;
+  transform: translateX(20px)
+}
+
+#relative {
+  position: relative;
+}
+
+.price-form {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+  font-size: 1em;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px 50px;
+}
+
+tr:nth-child(even) {
+  background-color: #CFEADB;
+}
+
+/* ---- Additional Media Queries ---- */
+
+@media (max-width: 960px) {
+    body {
+    background-image: url("../images/smallbackground.png");
+  }
+    footer {
+      color: var(--white);
+    }
+    #sms {
+      background-color: yellow;
+      border-radius: 10px;
+      display: inherit;
+}
+}
+
+@media (min-width: 620px) {
+  .options-link {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    width: 300px;
+    font-size: 3em;
+  }
+}
