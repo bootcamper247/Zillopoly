@@ -36,6 +36,8 @@ var homesInfo = [];
 
 $(document).ready(function () {
 
+//Display LOADING GIF till we are ready to Display Properties
+$("#images").html("<img id='imagefromzillow' src='https://ui-ex.com/images/gif-transparent-loading-4.gif'/>")    
 
 getProp(0);
 
@@ -46,7 +48,7 @@ function getProp(i){
 
         var queryURL = cors + "www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=" + zwsid + "&zpid=" + arrZpid[i];
         var gotVal = false;
-
+    
         $.ajax({
             url: queryURL,
             method: "GET"
