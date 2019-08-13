@@ -9,7 +9,6 @@ $(document).ready(function () {
         var num = $this.val().replace(/,/gi, "");
         var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
         
-        console.log(num2);
         // the following line has been simplified. Revision history contains original.
         $this.val(num2);
     });
@@ -80,17 +79,17 @@ function getProp(i){
                 goodProp++;
 
             }
-            console.log("Waiting.. Processed  " + resp + " out of " + arrZpid.length);
+            // console.log("Waiting.. Processed  " + resp + " out of " + arrZpid.length);
 
             //if (resp == arrZpid.length)     //i have last response
             if (goodProp >= 5)     //i have at least 5 properties
             {
                 //at this point we have processed all 
-                console.log("Queried properties = "+ arrZpid.length);
-                console.log("HELLO Good properties avail="+homesInfo.length);
-                for(x= 0; x <homesInfo.length; x++){
-                    console.log("Good property (" + x + ") "+ homesInfo[x].images[0]);
-                }
+                // console.log("Queried properties = "+ arrZpid.length);
+                // console.log("Good properties avail="+homesInfo.length);
+                // for(x= 0; x <homesInfo.length; x++){
+                //     console.log("Good property (" + x + ") "+ homesInfo[x].images[0]);
+                // }
 
                 loadProperty();
 
@@ -173,7 +172,7 @@ function getProp(i){
     }
 
     function loadProperty() {
-        console.log(homesInfo);
+        // console.log(homesInfo);
         timer = setInterval(countdown, 1000);
         for (var i = 0; i < homesInfo.length; i++) {
             //append pics to image div(Will working on slider)
@@ -194,7 +193,7 @@ function getProp(i){
         
         loadProperty();
          $("#progress").html(houseIndex + 1); 
-        console.log("House index: ",houseIndex);
+        // console.log("House index: ",houseIndex);
     }
 
     function timesUp() {
@@ -224,7 +223,7 @@ function getProp(i){
         maxBid = ((homesInfo[houseIndex].homePrice) + 100000)
 
         currentBid = $("#guess-price").val().split(",").join("");
-        console.log(currentBid);
+        // console.log(currentBid);
 
         if (currentBid == null || currentBid == 0) {
             confirm("Please enter a valid price.");
@@ -259,16 +258,16 @@ function getProp(i){
         guessDifference = 0;
         $("#guess-price").val("");
         finalSubmit()
-        console.log(houseIndex);
+        // console.log(houseIndex);
 
     }
 
 
     function finalSubmit() {
-        console.log(wins);
-        console.log(losses);
+        // console.log(wins);
+        // console.log(losses);
         var winTotal = wins+losses
-        console.log(winTotal);
+        // console.log(winTotal);
         $("#bids").html("Bids won: " + wins + " | " + "Bids Lost: " + losses);
         if (winTotal === 5) {
             winMessage()
