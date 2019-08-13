@@ -15,204 +15,15 @@ $(document).ready(function () {
     });
 });
 
-//     // Initialize Firebase
-//     var config = {
-//         apiKey: "AIzaSyBS6ED3MPTd7vVN5xO-4V8N6Tyee1Zd_p8",
-//         authDomain: "gtbc-zillopoly.firebaseapp.com",
-//         databaseURL: "https://gtbc-zillopoly.firebaseio.com",
-//         projectId: "gtbc-zillopoly",
-//         storageBucket: "gtbc-zillopoly.appspot.com",
-//         messagingSenderId: "213038611947"
-//     };
 
-//     firebase.initializeApp(config);
+var arrZpid = ["55044002","60950466", "14825681",  "14615831","14658221"];
 
-//     var database = firebase.database();
-//     var auth = firebase.auth();
-
-//     // vars
-
-//     var userName;
-//     var email;
-//     var password;
-//     var hasSignedUp;
-//     var hasSignedIn;
-//     var userWins = 0;
-//     var userLosses;
-//     var userProperties;
-
-// $(document).ready(function () {
-
-//     //create new user account
-
-//     $("#submitBtn").on("click", function (event) {
-//         event.preventDefault();
-
-//         var userName = $("#userName-input").val().trim();
-//         var email = $("#userEmail-input").val().trim();
-//         var password = $("#userPw-input").val().trim();
-//         var hasSignedUp = true;
-//         // var userKey = childSnapshot.ref.path.pieces_[1];  // Need to put this in the snapshot area and push key of the record TO the record.
-
-//         console.log("User = " + userName);
-//         console.log("Email = " + email);
-//         console.log("UserPassword = " + password);
-//         //console.log("UserKey = " + childSnapshot.ref.path.pieces_[1])
-
-//         database.ref("users").push({
-//             userName: userName,
-//             email: email,
-//             hasSignedUp: hasSignedUp,
-//             password: password,
-//             userKey: "userKey"
-
-//         });
-
-//         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-
-//             // Handle Errors here.
-//             var errorCode = error.code;
-//             var errorMessage = error.message;
-//             // ...
-
-//             console.log("error code and Msg... " + errorCode + " ... " + errorMessage);
-
-//         });
-
-//     });
-
-//     // Firebase Observer
-
-//     firebase.auth().onAuthStateChanged(function (user) {
-//         if (user) {
-//             // User is signed in.
-//         } else {
-//             // No user is signed in.
-//         }
-//     });
-
-//     // Firebase Profile grabber
-
-//     var user = firebase.auth().currentUser;
-//     var name, email, photoUrl, uid, emailVerified;
-
-//     if (user != null) {
-//         name = user.displayName;
-//         email = user.email;
-//         photoUrl = user.photoURL;
-//         emailVerified = user.emailVerified;
-//         uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-//         // this value to authenticate with your backend server, if
-//         // you have one. Use User.getToken() instead.
-//     }
-
-//     console.log("firebase UserID = " + user);
-
-//     //sign in to user account
-
-//     $("#ssubmitSignInBtn").on("click", function (event) {
-//         event.preventDefault();
-
-//         var userName = $("#suserName-input").val().trim();
-//         var email = $("#suserEmail-input").val().trim();
-//         var password = $("#suserPw-input").val().trim();
-//         var hasSignedIn = true;
-
-//         console.log("User has Signed In! = " + userName);
-//         console.log("Email Sign In = " + email);
-//         console.log("User Password= " + password);
-
-//         firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
-
-//             var user = firebase.auth().currentUser.email;
-
-//             console.log("signed in user..." + user);
-
-//         }).catch(function (error) {
-
-//             // Handle Errors here.
-//             var errorCode = error.code;
-//             var errorMessage = error.message;
-//             // ...
-
-//             console.log("error code... " + error.code + " error message...  " + error.message);
-//         });
-
-//         database.ref("loggedin").push({  //adds logged in users to the logged in firebase folder
-//             newUserSignIn: userName,
-//             email: email,
-//             hasSignedIn: hasSignedIn,
-//             password: password,
-//             //userKey: userKey
-
-//         });
-
-//         $("#userName-input").val("");
-
-//     });
-
-//     // Logged Out Button
-
-//     // sign out of user account not working - need help identifying which record to remove.  Maybe listen to the session and automatically log out once the session is done?
-
-//     $("#submitSignOutBtn").on("click", function (event) {
-//         event.preventDefault();
-
-//         // var userName = $("#userName-input").val().trim();
-//         // var email = $("#userEmail-input").val().trim();
-//         // var password = $("#userPw-input").val().trim();
-//         // var hasSignedIn = false;
+var homesInfo = [];
+var resp=0;
+var goodProp=0;
 
 
-
-//         // database.ref("loggedin").remove({
-
-//         //$("data-id").something();
-
-
-//         // newUserSignIn: userName,
-//         // email: email,
-//         // hasSignedIn: hasSignedIn
-
-//         //});
-
-//         var user = firebase.auth().currentUser.uid;
-
-//         firebase.auth().signOut().then(function () {
-//             // Sign-out successful.
-//         }).catch(function (error) {
-//             // An error happened.
-//         });
-
-//         console.log("User has Signed OUT! = " + user);
-
-//     });
-
-//     // ============================= NEED TO MOVE THIS TO THE WINS SECTION ===========================
-//     $("#addWins").on("click", function (event) {
-
-//         //var userWins = //
-//         userWins++;
-
-//         console.log(userWins);
-
-//         database.ref("buttonPushWins").push({  //adds points to  userWins in the logged in firebase folder
-//             // newUserSignIn: userName,
-//             // email: email,
-//             // hasSignedIn: hasSignedIn,
-//             wins: userWins
-
-//         });
-
-//         $("#userWins").html(userWins);
-
-//     });
-
-// });
-
-    var arrZpid = ["55044002","60950466", "14825681",  "14615831","14658221", "14833872"];
-
-    var homesInfo = [];
+var homesInfo = [];
     var homesInfoPromise = [];
     var obj = {};
     var timer = ''
@@ -224,190 +35,73 @@ $(document).ready(function () {
     var winTotal = 0;
 
 
-
-    // // Get elements
-    // const userEmail = document.getElementById("userEmail-input");
-    // const userPassword = document.getElementById("userPw-input");
-    // const btnLogin = document.getElementById("btnLogin");
-    // const btnSignup = document.getElementById("btnSignUp");
-    // const btnLogout = document.getElementById("btnLogout");
-
-    // // Add login event
-    // btnLogin.addEventListener("click", e => {
-    //     // Get email and password
-    //     const email = userEmail.value;
-    //     const pass = userPassword.value;
-    //     const auth = firebase.auth();
-    //     // Sign in
-    //     const promise = auth.signInWithEmailAndPassword(email, pass);
-    //     promise.catch(e => console.log(e.message));
-    // });
-
-    // // Add Signup Event
-    // btnSignup.addEventListener("click", e => {
-    //     // Get email and password
-    //     const email = userEmail.value;
-    //     const pass = userPassword.value;
-    //     const auth = firebase.auth();
-    //     // Sign in
-    //     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    //     promise.catch(e => console.log(e.message));
-    // });
-
-    // btnLogout.addEventListener("click", e => {
-    //     firebase.auth().signOut();
-    // })
-
-    // // Adds realtime user
-    // firebase.auth().onAuthStateChanged(firebaseUser => {
-    //     if(firebaseUser) {
-    //         console.log(firebaseUser);
-    //         btnLogout.classList.remove("hide");
-            
-    //     } else {
-    //         console.log("Not logged in.");
-    //         btnLogout.classList.add("hide");
-    //     }
-    // });
-
-
-
 $(document).ready(function () {
 
-        //Write to another array
+
+getProp(0);
+
+    //Write to another array
+function getProp(i){
+
+        var imgArr = [];
+
+        var queryURL = cors + "www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=" + zwsid + "&zpid=" + arrZpid[i];
+        var gotVal = false;
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            resp++;
+
+            var jsonResponse = xmlToJson(response);
 
 
-        async function getInfo() {
-            return new Promise(async (resolve, reject) => {
-                for (i = 0; i < arrZpid.length; i++) {
-                    homesInfoPromise.push(getObjList(i))
-                    // console.log(val)
-                    // obj = { price: homePrice, images: imgArr, bedrooms: homeBedrooms, bathrooms: homeBathrooms };
-                    // var homePrice = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.price["#text"];
+            // check for 3+ images else move to next property
 
-                    // homeBedrooms = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bedrooms["#text"];
+            if (jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].message.code["#text"] == "0" && jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.images.count["#text"] > 0) {
 
-                    // homeBathrooms = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bathrooms["#text"];
+                var homePrice = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.price["#text"];
 
-                    // for (j = 0; j < 3; j++) {
-                    //     homeImage = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.images.image.url[j]["#text"];
-                    //     imgArr[j] = homeImage;
-                    // }
-                    // console.log(val)
-                    // homesInfoPromise.push(val)
+                homeBedrooms = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bedrooms["#text"];
 
+                homeBathrooms = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bathrooms["#text"];
+
+
+                for (j = 0; j < 1; j++) {
+                    homeImage = jsonResponse["UpdatedPropertyDetails:updatedPropertyDetails"].response.images.image.url[j]["#text"];
+                    imgArr[j] = homeImage;
                 }
-                // console.log(homesInfoPromise)
-                resolve(homesInfoPromise)
-            })
-        }
-
-        async function getObjList(i) {
-            return new Promise((resolve, reject) => {
-                var imgArr = [];
-
-                var queryURL = cors + "www.zillow.com/webservice/GetUpdatedPropertyDetails.htm?zws-id=" + zwsid + "&zpid=" + arrZpid[i];
-
-                $.ajax({
-                    url: queryURL,
-                    method: "GET"
-                }).then(function (response) {
 
 
-                    var jsonResponse = xmlToJson(response);
-                    // console.log(jsonResponse)
+                obj = { homePrice: homePrice, images: imgArr, homeBedrooms: homeBedrooms, homeBathrooms: homeBathrooms };
+                homesInfo.push(obj);
+ 
+                goodProp++;
 
-
-                    let arr = []
-                    arr.push(jsonResponse)
-
-                    resolve(arr)
-                })
-                    .catch(function (err) {
-                        reject(err)
-                    });
-            })
-        }
-
-
-        async function gotInfo() {
-            try {
-                $("#images").html("<img id='imagefromzillow' src='https://ui-ex.com/images/gif-transparent-loading-4.gif'/>")
-
-                homesInfoPromise = await getInfo()
-                Promise.all(homesInfoPromise).then(jsonResponse => {
-                    jsonResponse.forEach((res, i) => {
-                        if (i !== 1) {
-
-                            
-
-                            const obj = {}
-                            obj.homePrice = res[0]["UpdatedPropertyDetails:updatedPropertyDetails"].response.price["#text"];
-
-                            obj.homeBedrooms = res[0]["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bedrooms["#text"];
-
-                            obj.homeBathrooms = res[0]["UpdatedPropertyDetails:updatedPropertyDetails"].response.editedFacts.bathrooms["#text"];
-                            const arr = []
-                            for (var j = 0; j < 3; j++) {
-                                arr.push(res[0]["UpdatedPropertyDetails:updatedPropertyDetails"].response.images.image.url[j]["#text"])
-                            }
-                            obj.images = arr
-
-                            homesInfo.push(obj)
-                        }
-                    })
-
-
-                    // other logic here
-
-
-                    loadProperty()
-
-                })
-                // loadProperty()
-                // homeInfo()
-                return homesInfoPromise
-            } catch (err) {
-                console.log(err)
-                throw err
             }
+            console.log("Waiting.. Processed  " + resp + " out of " + arrZpid.length);
 
+            //if (resp == arrZpid.length)     //i have last response
+            if (goodProp >= 5)     //i have at least 5 properties
+            {
+                //at this point we have processed all 
+                console.log("Queried properties = "+ arrZpid.length);
+                console.log("HELLO Good properties avail="+homesInfo.length);
+                for(x= 0; x <homesInfo.length; x++){
+                    console.log("Good property (" + x + ") "+ homesInfo[x].images[0]);
+                }
 
+                loadProperty();
 
-            // append here
+            }else
+            {
+                i++;
+                getProp(i);
+            }
+        });
+    }
 
-
-        }
-
-
-        // function loadProperty() {
-        //     timer = setInterval(countdown, 1000);
-        //     for (var i = 0; i < homesInfo.length; i++) {
-
-
-        //         $("#bedandbath").append("<p>Bedrooms: " + homesInfo[0].homeBedrooms + "</p>");
-
-        //         $("#bedandbath").append("<p>Baths: " + homesInfo[0].homeBathrooms + "</p>");
-        //         // console.log("This is Homes Info",homesInfo[0]);
-        //     }
-
-
-        // }
-
-        gotInfo()
-
-
-
-        // async function homesInfo(homesInfoPromise){
-        //     return new Promise((resolve,reject)=>{
-        //         Promise.all(homesInfoPromise).then(val=>{
-        //             resolve(val)
-        //          })
-        //          .catch(err=>{
-        //             reject(err)
-        //          })
-        //     })
-        // }
 
 
         // Changes XML to JSON
@@ -628,13 +322,13 @@ $(document).ready(function () {
 
 function winMessage(){
     if (wins <= 1) {
-        $("#bids").html("Dang... " + wins + " bids won this time.")
+        $("#bids").html("Dang... " + wins + " bids won this time. ")
         $("#hideAfter").html("<br><br><p>Created by:</p>" + "<ul><li>Anjali Aujla</li><li>Taylor Reese</li><li>Tuere Thomas</li><li>Will Woods</li></ul>" + "<p>Find the code for this project on <a href='https://wwoods1016.github.io/Zillopoly' target:'#'>Github</a>.</p>");
     } else if (wins >1 && wins <= 4) {
-        $("#bids").html("Pretty good! " + wins + " out of 5.")
+        $("#bids").html("Pretty good! " + wins + " out of 5. ")
         $("#hideAfter").html("<br><br><p>Created by:</p>" + "<ul><li>Anjali Aujla</li><li>Taylor Reese</li><li>Tuere Thomas</li><li>Will Woods</li></ul>" + "<p>Find the code for this project on <a href='https://wwoods1016.github.io/Zillopoly' target:'#'>Github</a>.</p>");
     } else {
-        $("#bids").html("Perfect 5 out of 5.")
+        $("#bids").html("Perfect 5 out of 5. ")
         $("#hideAfter").html("<br><br><p>Created by:</p>" + "<ul><li>Anjali Aujla</li><li>Taylor Reese</li><li>Tuere Thomas</li><li>Will Woods</li></ul>" + "<p>Find the code for this project on <a href='https://wwoods1016.github.io/Zillopoly' target:'#'>Github</a>.</p>");
 
     }
